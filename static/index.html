@@ -16,14 +16,14 @@
 
 
         <div class="container">
-          <div class="row" style="text-align:center">
+          <div class="row" style="text-align:center; padding-top: 1em; padding-bottom: 1em">
             <div class="col"><h1 class="display-4">Welcome to Arun's Radio</h1></div>
           </div>
           <div class="row">
             <div class="col" id="player"></div>
           </div>
 
-          <div class="row" style="text-align:center">
+          <div class="row" style="text-align:center; padding-top: 2em">
             <div class="col">
                 <div class="input-group">
                     <input id="inputBox" type="url" name="videoToAdd" placeholder="Enter Youtube Link to add to queue" class="form-control">
@@ -34,17 +34,13 @@
             </div>
           </div>        
 
-        <!-- <ul id="songsQueue">
-        {{range $index, $element := .SongList}}
-            <li>{{$element.Title}}<img src="{{$element.Image}}"/></li>
-        {{end}}
-        </ul>
- -->
-
         <div class="container" id="songsQueue">
+        <div class="row" style="text-align:center; padding-top: 2em">
+          <div class="col"><h4>Up Next:</h4></div>
+          </div>
         {{range $index, $element := .SongList}}
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col">
                           {{$index}}
                         </div>
                         <div class="col">
