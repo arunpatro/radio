@@ -2,27 +2,63 @@
 
 <html>
     <head>
-        <title>Intranet YouTube Radio</title>
-        Intranet YouTube Radio
+        <title>Arun's Radio</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
 
     <body>
-        <pre>W0rkInPr0gr3ss</pre>
-
         <script type="text/javascript" src="ytapi"></script>
         <script type="text/javascript" src="sockapi"></script>
         <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <div id="player"></div>
 
-        <input id="inputBox" type="url" name="videoToAdd" placeholder="Enter Youtube Link to add to queue">
-        <input type="submit" value="Add to Queue" onclick="sendUserInput()">
+        <div class="container">
+          <div class="row" style="text-align:center">
+            <div class="col"><h1 class="display-4">Welcome to Arun's Radio</h1></div>
+          </div>
+          <div class="row">
+            <div class="col" id="player"></div>
+          </div>
 
-        <ul id="songsQueue">
+          <div class="row" style="text-align:center">
+            <div class="col">
+                <div class="input-group">
+                    <input id="inputBox" type="url" name="videoToAdd" placeholder="Enter Youtube Link to add to queue" class="form-control">
+                    <div class="input-group-append">
+                        <input class="btn btn-outline-secondary" type="submit" value="Add to Queue" onclick="sendUserInput()">
+                    </div>
+                </div>
+            </div>
+          </div>        
+
+        <!-- <ul id="songsQueue">
         {{range $index, $element := .SongList}}
             <li>{{$element.Title}}<img src="{{$element.Image}}"/></li>
         {{end}}
         </ul>
+ -->
+
+        <div class="container" id="songsQueue">
+        {{range $index, $element := .SongList}}
+                    <div class="row">
+                        <div class="col-1">
+                          {{$index}}
+                        </div>
+                        <div class="col">
+                          {{$element.Title}}
+                        </div>
+                        <div class="col">
+                          <img src="{{$element.Image}}"/>
+                        </div>
+                  </div>
+        {{end}}
+        </div>
+
+
+
 
     </body>
 </html>
